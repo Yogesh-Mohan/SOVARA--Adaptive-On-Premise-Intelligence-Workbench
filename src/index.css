@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-main: var(--bg-main);
+  --color-bg-panel: var(--bg-panel);
+  --color-bg-panel-hover: var(--bg-panel-hover);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-border-subtle: var(--border-subtle);
+  --color-primary: #3b82f6;
+  --color-security: #10b981;
+}
+
+:root {
+  --bg-main: #ffffff;
+  --bg-panel: #f3f4f6;
+  --bg-panel-hover: #e5e7eb;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border-subtle: #d1d5db;
+}
+
+.dark {
+  --bg-main: #000000;
+  --bg-panel: #111827;
+  --bg-panel-hover: #1f2937;
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --border-subtle: #374151;
+}
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-charcoal-900);
+    color: #cbd5e1;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+  }
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.5); /* Slate 800 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(71, 85, 105, 0.5); /* Slate 600 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.8); /* Slate 500 */
+}

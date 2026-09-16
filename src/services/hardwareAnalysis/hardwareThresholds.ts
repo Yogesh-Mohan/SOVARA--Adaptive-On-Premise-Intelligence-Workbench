@@ -1,0 +1,14 @@
+export const HARDWARE_THRESHOLDS = {
+    MEMORY: {
+        HIGH_AVAILABLE_GB: 16,
+        MEDIUM_AVAILABLE_GB: 8,
+    },
+    VRAM: {
+        HIGH_GB: 12,
+        MEDIUM_GB: 6,
+    },
+    RESOURCE_STATUS: {
+        CONSTRAINED_UTILIZATION_PERCENT: 85,
+        MODERATE_UTILIZATION_PERCENT: 60,
+    }
+};

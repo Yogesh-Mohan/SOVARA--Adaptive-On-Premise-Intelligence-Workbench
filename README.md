@@ -1,75 +1,75 @@
-# React + TypeScript + Vite
+# SOVARA: Sovereign AI Workbench
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)
 
-Currently, two official plugins are available:
+**SOVARA (Adaptive On-Premise Intelligence Workbench)** is a privacy-first, fully localized AI workbench designed to run Large Language Models (LLMs) directly on your hardware without relying on cloud APIs. Built with high performance and data sovereignty in mind.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+- **100% Local Execution**: Your data never leaves your machine. Full data privacy and security.
+- **Hardware-Aware Adaptive Engine**: Automatically profiles your system hardware (CPU/GPU/RAM) to optimally configure and run models.
+- **Cross-Platform Desktop App**: Built using modern web technologies (React/Vite) packaged into a lightweight native app using [Tauri](https://tauri.app/).
+- **Optimized Inference**: Powered by local inference engines (ggml/llama.cpp) supporting hardware acceleration.
+- **Model Registry & Manager**: Seamlessly download, manage, and switch between various quantized models (e.g., TinyLlama, Llama 3) with a built-in UI.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Technology Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: React 18, Vite, TypeScript, Tailwind CSS
+- **Backend / Desktop runtime**: Rust (Tauri)
+- **AI Inference**: llama.cpp binaries
+- **Scripting**: Python (for model downloading utilities)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Installation & Setup
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Ensure you have the following installed on your system:
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [Rust](https://www.rust-lang.org/tools/install)
+- [Python 3](https://www.python.org/)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Getting Started
 
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Yogesh-Mohan/SOVARA--Adaptive-On-Premise-Intelligence-Workbench.git
+   cd SOVARA--Adaptive-On-Premise-Intelligence-Workbench/sovereign-ai-workbench
+   ```
+
+2. **Install frontend dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Download Models**
+   You can download the base models using the provided Python scripts:
+   ```bash
+   python download_tinyllama.py
+   ```
+
+4. **Run in Development Mode**
+   Start the Tauri development server:
+   ```bash
+   npm run tauri dev
+   ```
+
+## 🏗️ Building for Production
+
+To build the optimized native application for your operating system, run:
+
+```bash
+npm run tauri build
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+This will generate an installer in `src-tauri/target/release/bundle/`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🤝 Contributing
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Contributions, issues, and feature requests are welcome! 
+Feel free to check the [issues page](https://github.com/Yogesh-Mohan/SOVARA--Adaptive-On-Premise-Intelligence-Workbench/issues) if you want to contribute.
 
-```
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
